@@ -18,11 +18,7 @@ main:not(.newsletter-main) {
 
     .showtime {
         max-width: 100%;
-        @media (min-width: 900px) {
-            place-self: start;
-            margin-top: 6rem;
-            grid-column: 2;
-        }
+        
     }
 
 }
@@ -30,20 +26,33 @@ main:not(.newsletter-main) {
 .showtime {
     margin-inline: auto;
     margin-block: 2rem 0rem;
-    background-color: $c-yellow;
+    background-color: $c-gray-light;
     list-style-type: none;
     // max-width: 300px;
     border-radius: 10px;
     padding: 1rem 0.5rem 1.5rem;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 25px 50px -20px, rgba(0, 0, 0, 0.3) 0px 15px 30px -15px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
     
+    @media (min-width: 1200px) {
+            position: absolute;
+            top: 42rem;
+            right: 8rem;
+        }
+@media (min-width: 1250px) {
+    position: absolute;
+    top: 42rem;
+    right: 6rem;
+}
+
+
+
     h2 {
         text-align: center;
         font-size: clamp(1.5rem, 3vw, 2rem);
         place-self: start;
-        color: $c-gray-light;
+        color: $c-red-dark;
         letter-spacing: 2px;
-        text-shadow: 2px 2px 6px rgb(0 0 0 / 0.5), 0 1px 3px rgb(0 0 0 / 0.7);
+       text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.392), 0 1px 3px rgba(0, 0, 0, 0.349);
         margin-bottom: 1rem;
     }
 

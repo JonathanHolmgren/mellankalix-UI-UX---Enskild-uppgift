@@ -39,9 +39,12 @@ function generateMovieItems() {
   randomlySortedMovies.forEach((movie, index) => {
     const currentMovie = movieItems[index];
     currentMovie.querySelector("img").src = movie.image;
+
     currentMovie.querySelector("h3").textContent = movie.title;
+    currentMovie.querySelector("h3").classList.remove("visually-hidden");
     currentMovie.querySelector("p").textContent = movie.director;
-    currentMovie.querySelector("a").href = window.location.origin + "/movie.html#" + movieIds[index];
+    currentMovie.querySelector("a").href =
+      window.location.origin + "/movie.html#" + movieIds[index];
   });
 }
 

@@ -154,30 +154,37 @@ main:not(.newsletter-main) .carousel {
 main:not(.newsletter-main) .showtime {
   max-width: 100%;
 }
-@media (min-width: 900px) {
-  main:not(.newsletter-main) .showtime {
-    place-self: start;
-    margin-top: 6rem;
-    grid-column: 2;
-  }
-}
 
 .showtime {
   margin-inline: auto;
   margin-block: 2rem 0rem;
-  background-color: #fff3b0;
+  background-color: #edf2f4;
   list-style-type: none;
   border-radius: 10px;
   padding: 1rem 0.5rem 1.5rem;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 25px 50px -20px, rgba(0, 0, 0, 0.3) 0px 15px 30px -15px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+@media (min-width: 1200px) {
+  .showtime {
+    position: absolute;
+    top: 42rem;
+    right: 8rem;
+  }
+}
+@media (min-width: 1250px) {
+  .showtime {
+    position: absolute;
+    top: 42rem;
+    right: 6rem;
+  }
+}
 .showtime h2 {
   text-align: center;
   font-size: clamp(1.5rem, 3vw, 2rem);
   place-self: start;
-  color: #edf2f4;
+  color: #540b0e;
   letter-spacing: 2px;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5), 0 1px 3px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.392), 0 1px 3px rgba(0, 0, 0, 0.349);
   margin-bottom: 1rem;
 }
 .showtime .showtimes {
@@ -1126,6 +1133,15 @@ input[type=password]:focus {
     transform: translateX(100%);
   }
 }
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
 .about {
   width: 75%;
   margin-inline: 30%;
@@ -1581,4 +1597,12 @@ a:hover {
   border: 1px soild black;
   text-align: center;
   text-decoration: none;
+}
+
+.visually-hidden-h1 {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
