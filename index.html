@@ -6,7 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="static/main.css" />
-  <title>Tomtens Biograf</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="docs/css/bootstrap.css">
+ <title>Tomtens Biograf</title>
 </head>
 
 <body>
@@ -36,7 +38,7 @@
       <li>
         <div class="search-bx">
           <div class="search">
-            <label for="search">Sökfält:</label>
+            <!--<label for="search">Sökfält:</label>-->
             <input type="text" placeholder="Sök film..." id="search" data-search />
             <i class="material-symbols-outlined" id="search-icon">search</i>
             <div class="search-bx2" id="movies-filter"></div>
@@ -123,10 +125,94 @@
           </div>
         </div>
       </li>
+      <li class="nav-list-item"><div class="dropdown">
+        <button type="button" class="dropdown-button " data-bs-toggle="modal" data-bs-target="#exampleModal">
+          Logga in
+          </button> 
+          <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body signin_modal">
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                      <a class="nav-link active" id="profile-tab" data-bs-toggle="tab" href="#signin" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Logga in</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="home-tab" data-bs-toggle="tab" href="#signup" role="tab" aria-controls="home" aria-selected="true">Registrera dig</a>
+                    </li>
+                  </ul>
+                  <div class="social_login">
+                  </div>
+                  <div class="tab-content signin_tab" id="myTabContent">
+                    <div class="tab-pane fade show active" id="signin" role="tabpanel" aria-labelledby="profile-tab" >
+                      <form id="signin_form">
+                         <div class="mb-3">
+                           <input type="text" class="form-control" id="exampleInputText" aria-describedby="textHelp" placeholder="Användarnamn" name="username" required>
+                         </div>
+                         <div class="mb-3">
+                           <input type="password" class="form-control" id="exampleInputpassword" aria-describedby="passwordHelp" placeholder="Lösenord" name="password" required>
+                         </div>
+                         <p class="forgot_link"><a href="#">Glömt ditt lösenord?</a></p>
+                         <button type="submit" class="btn btn-primary btn-sm btn-block">Logga in</button>
+                         <p class="signin_link">Har du inte ett konto? <a id="home-tab" data-bs-toggle="tab" href="#signup" role="tab" aria-controls="home" aria-selected="true">Registrera dig</a></p>
+                       </form>
+                     </div>
+
+                    <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="home-tab">
+                      <form id="signup_form">
+                        <div class="mb-3">
+                          <input type="text" class="form-control" id="exampleInputText" aria-describedby="textHelp" placeholder="Förnamn o Efternamn" name="fullname"required>
+                        </div>
+                        <div class="mb-3">
+                          <input type="text" class="form-control" id="exampleInputText" aria-describedby="textHelp" placeholder="Användarnamn" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Mejladress" name="email" required>
+                        </div>
+                        <div class="pw-meter">
+                           <div class="form-element mb-3">
+                              <input type="password" class="form-control" id="exampleInputpassword" aria-describedby="passwordHelp" placeholder="Lösenord" form-control form-control-lg form-control-solid name="password" required>
+                           <div class="pw-display-toggle-btn">
+                              <i class="fa fa-eye"></i>
+                              <i class="fa fa-eye-slash"></i>
+                            </div>
+                            <div class="pw-strength form-control">
+                              <span></span>
+                              <span></span>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!--<div class="mb-3" data-kt-password-meter="true">
+                          <input type="password" class="form-control form-control" id="exampleInputpassword" aria-describedby="passwordHelp" placeholder="Lösenord" form-control form-control-lg form-control-solid>
+                        </div> -->
+                       
+                        <button type="submit" class="btn btn-primary btn-sm btn-block">Skapa konto</button>
+                        <p class="signin_link">Har du redan ett konto? <a id="profile-tab" data-bs-toggle="tab" href="#signin" type="submit" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Logga in</a></p>
+                      </form>
+                    </div>
+          
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+    </li>
     </ul>
   </nav>
 
   <main>
+   <!-- modal -->
+
+
+
+
     <!--<section class="carousel">
    <article class="carousel-item carousel-item-one active-left">
         <div class="carousel-arrow carousel-item-prev"></div>
@@ -206,11 +292,20 @@
       <img alt="Tomtemor" class="footer-image" />
     </div>
   </footer>
+
+  
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="js/hamburgerMenu.js"></script>
-  <script src="js/navMenu.js"></script>
-<script src="js/carousel.js" type="module"></script>
+  <script src="js/passwordStrengthMeter.js"></script>
+  <script src="js/loginAndSignup.js" type="module"></script>
+<!--<script src="js/carousel.js" type="module"></script>
+<script src="js/navMenu.js"></script>
+-->
   <script src="js/search.js" type="module"></script>
   <script src="js/asideShowTimes.js" type="module"></script>
+  
+
   <script src="index.js" type="module"></script>
 </body>
 

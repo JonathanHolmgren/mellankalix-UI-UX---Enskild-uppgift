@@ -12,16 +12,16 @@ function makeNav(){
             newListItems[i] = listItems[i].cloneNode(true);
             listItems[i].parentNode.replaceChild(newListItems[i], listItems[i]);
     }
-if(window.innerWidth < 750){
-    const buttons = document.querySelectorAll(".dropdown-button");
-    buttons.forEach(button => 
-        button.addEventListener("click", () => {
-            if(button.nextElementSibling.className == "dropdown-content show"){
-                button.nextElementSibling.classList.remove("show");
-            } else {
-            openThisHideTheRest(button);
-        }
-        }));
+    if(window.innerWidth < 750){
+        const buttons = document.querySelectorAll(".dropdown-button");
+        buttons.forEach(button => 
+            button.addEventListener("click", () => {
+                if(button.nextElementSibling.className == "dropdown-content show"){
+                    button.nextElementSibling.classList.remove("show");
+                } else {
+                openThisHideTheRest(button);
+            }
+            }));
     } else {
        newListItems.forEach(listItem =>
             listItem.addEventListener("mouseover", () => {
@@ -53,26 +53,25 @@ function hideDropdown(element){
     }
 }
 
-
 function showDropdown(whatDropDown){
-switch(whatDropDown) {
-    case "Repertoar":
-        document.getElementById("dropdown-repertoar").classList.toggle("show");
+    switch(whatDropDown) {
+        case "Repertoar":
+            document.getElementById("dropdown-repertoar").classList.toggle("show");
+            break;
+        case "Serverade salonger":
+            document.getElementById("dropdown-salonger").classList.toggle("show");
         break;
-    case "Serverade salonger":
-        document.getElementById("dropdown-salonger").classList.toggle("show");
-    break;
-    case "Specialvisningar":
-        document.getElementById("dropdown-specialvisningar").classList.toggle("show");
-    break;
-    case "Live på bio":
-        document.getElementById("dropdown-live").classList.toggle("show");
-    break;
-    case "Bar & Bistro":
-        document.getElementById("dropdown-bar&bistro").classList.toggle("show");
-    break;
-    case "Sök":
-        document.getElementById("dropdown-search").classList.toggle("show");
-    break;
-}
-}
+        case "Specialvisningar":
+            document.getElementById("dropdown-specialvisningar").classList.toggle("show");
+        break;
+        case "Live på bio":
+            document.getElementById("dropdown-live").classList.toggle("show");
+        break;
+        case "Bar & Bistro":
+            document.getElementById("dropdown-bar&bistro").classList.toggle("show");
+        break;
+        case "Sök":
+            document.getElementById("dropdown-search").classList.toggle("show");
+        break;
+    }
+    }
